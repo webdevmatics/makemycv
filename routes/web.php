@@ -14,9 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $pdf = \PDF::loadView('pdf');
+
+    return $pdf->download('new_improved.pdf');
+    return view('main');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Route::get('user-detail/create', 'UserDetailController@create')->middleware('auth')->name('user-detail.create');
+
+// Route::post('user-detail', 'UserDetailController@store')->middleware('auth');
+
+
+
+Route::resource('user-detail', 'UserDetailController')->middleware('auth');
+
+Route::resource('education', 'EducationController')->middleware('auth');
+
+Route::resource('experience', 'ExperienceController')->middleware('auth');
+Route::resource('skill', 'SkillController')->middleware('auth');
