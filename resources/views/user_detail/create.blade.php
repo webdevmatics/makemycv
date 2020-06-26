@@ -9,13 +9,12 @@
 <form action="/user-detail" method='POST'>
     @csrf
 
-    <input type="text" name='fullname' placeholder='fullname'>
+    <x-form.text name="fullname"></x-form.text>
+    <x-form.text name="email" type="email"></x-form.text>
+    <x-form.text name="phone"></x-form.text>
+    <x-form.text name="address"></x-form.text>
 
-    <input type="text" name='email' placeholder='email'>
-
-    <input type="text" name='phone' placeholder='phone'>
-
-    <input type="text" name='address' placeholder='address'>
+    <x-form.textarea name="summary"></x-form.textarea>
 
     <input type="submit" value="Submit">
 

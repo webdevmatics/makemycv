@@ -42,6 +42,8 @@ class UserDetailController extends Controller
             'fullname'=>'required',
             'email'=>'required|email',
             'phone'=>'required',
+            'summary' => 'required',
+
         ]);
 
         $detail = new UserDetail();
@@ -92,6 +94,7 @@ class UserDetailController extends Controller
             'fullname' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
+            'summary' => 'required',
         ]);
 
 

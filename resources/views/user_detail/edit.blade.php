@@ -6,18 +6,18 @@
     <h2>Tell us something about you</h2>
 
 
-    <form action=" {{route('user-detail.update', $userDetail)}} " method='POST'>
+    <form action=" route('user-detail.update', $userDetail)}} " method='POST'>
         @csrf
         @method('PUT')
-    <input type="text" name='fullname' placeholder='fullname' value="{{$userDetail->fullname}}">
 
-        <input type="text" name='email' placeholder='email' value="{{$userDetail->email}}">
+        <x-form.text name="fullname" :value="$userDetail->fullname"></x-form.text>
+        <x-form.text name="email" type="email" :value="$userDetail->email"></x-form.text>
+        <x-form.text name="phone" :value="$userDetail->phone"></x-form.text>
+        <x-form.text name="address" :value="$userDetail->address"></x-form.text>
 
-        <input type="text" name='phone' placeholder='phone' value="{{$userDetail->phone}}">
+        <x-form.textarea name="summary" :value="$userDetail->summary"></x-form.textarea>
 
-        <input type="text" name='address' placeholder='address' value="{{$userDetail->address}}">
-
-        <input type="submit" value="Submit">
+        <x-form.submit> </x-form.submit>
 
     </form>
 
