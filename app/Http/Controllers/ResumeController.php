@@ -16,7 +16,7 @@ class ResumeController extends Controller
         $user = auth()->user();
 
         // return view('resume_simple', compact('user'));
-        return view('resume-clone', compact('user'));
+        return view('resume-ref', compact('user'));
         // return view('resume2', compact('user'));
     }
 
