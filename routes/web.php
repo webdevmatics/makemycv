@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $pdf = \PDF::loadView('pdf');
-
-    return $pdf->download('new_improved.pdf');
     return view('main');
 });
 
@@ -37,3 +34,5 @@ Route::resource('education', 'EducationController')->middleware('auth');
 
 Route::resource('experience', 'ExperienceController')->middleware('auth');
 Route::resource('skill', 'SkillController')->middleware('auth');
+
+Route::get('resume', 'ResumeController@index')->name('resume.index')->middleware('auth');
