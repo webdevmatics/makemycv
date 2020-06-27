@@ -61,7 +61,6 @@
             <p>Graduation Date: {{$e->graduation_end_date}} </p>
             @endforeach
         </section>
-        >
 
 
         <section class="work">

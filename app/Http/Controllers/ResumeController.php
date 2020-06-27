@@ -24,7 +24,7 @@ class ResumeController extends Controller
     {
         $user = auth()->user();
 
-        $pdf = \PDF::loadView('resume', compact('user'));
+        $pdf = \PDF::loadView('resume-ref', compact('user'));
         return $pdf->download('resume.pdf');
     }
 }
