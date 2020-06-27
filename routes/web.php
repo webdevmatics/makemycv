@@ -1,5 +1,6 @@
 <?php
 
+use Spatie\Browsershot\Browsershot;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $pdf = \PDF::loadView('pdf');
+    Browsershot::html(
 
-    return $pdf->download('new_improved.pdf');
+        view('resume2',['user'=>auth()->user()])
+
+        )
+        ->fullPage()
+
+        ->save('new_resume.pdf');
+
+
+
+        return response()->download('new_resume.pdf');
+        dd('done');
     return view('main');
 });
+
+
+Route::get('/resume/download','ResumeController@download')->name('resume.download');
+Route::get('/resume', 'ResumeController@index')->name('resume.index');
 
 Auth::routes();
 

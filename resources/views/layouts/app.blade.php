@@ -44,6 +44,46 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                        <li class='nav-item'>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
+                                Preview
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade " id="modelId" tabindex="-1" role="dialog"
+                                aria-labelledby="modelTitleId" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Preview Resume</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <iframe width='100%' height='900'  src="{{route('resume.index')}}"></iframe>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <a name="" id="" class="btn btn-primary" href="{{route('resume.download')}}"
+                                                role="button">Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <div class="nav-item">
+                            <a target="_blank" href=" {{route('resume.index')}} "> View</a>
+                        </div>
+
+
+
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -83,6 +123,7 @@
             </div>
         </nav>
 
+
         <main class="py-4 container">
 
             @auth
@@ -96,6 +137,7 @@
                             href="{{route('experience.index')}}">Work History</a></li>
                     <li class="breadcrumb-item {{ request()->is('skill') ? 'active' : '' }}"><a
                             href="{{route('skill.index')}}">Skills</a></li>
+
                 </ol>
             </nav>
             @endauth

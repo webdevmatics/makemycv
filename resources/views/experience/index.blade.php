@@ -11,9 +11,9 @@
         <h4 class="card-title"> {{$e->job_title}}  ({{$e->start_date}} to {{$e->end_date}}) </h4>
 
         <ul>
-        <li>{{ $e->employer}}</li>
-        <li>{{ $e->city}}</li>
-        <li>{{ $e->state}}</li>
+            <li>{{ $e->employer}}</li>
+            <li>{{ $e->city}}</li>
+            <li>{{ $e->state}}</li>
         </ul>
 
     <a  class="btn btn-sm btn-primary" href=" {{route('experience.edit', $e)}} " role="button">Edit</a>

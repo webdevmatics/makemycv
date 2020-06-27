@@ -6,7 +6,7 @@
     <h2>Tell us something about you</h2>
 
 
-    <form action=" route('user-detail.update', $userDetail)}} " method='POST'>
+    <form action="{{route('user-detail.update', $userDetail)}} " method='POST'>
         @csrf
         @method('PUT')
 
