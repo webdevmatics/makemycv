@@ -1,6 +1,6 @@
 <?php
 
-use Spatie\Browsershot\Browsershot;
+
 use Illuminate\Support\Facades\Route;
 
 /*
