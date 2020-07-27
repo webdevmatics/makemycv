@@ -15,19 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Browsershot::html(
-
-        view('resume2',['user'=>auth()->user()])
-
-        )
-        ->fullPage()
-
-        ->save('new_resume.pdf');
-
-
-
-        return response()->download('new_resume.pdf');
-        dd('done');
+    
     return view('main');
 });
 
